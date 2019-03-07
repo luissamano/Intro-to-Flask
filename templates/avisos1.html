@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Pagina Principal</title>
+  </head>
+
+  <body>
+    <h4>Paginas de avisos</h4>
+    <h3>{{ msg }}</h3>
+    <p>{{ fecha }}</p>
+
+    {%if anio < 2019 %}
+
+    <p>Año pasado</p>
+    {%endif %} {% for item in nombres %}
+    <p>{{ item }}</p>
+    {% endfor %}
+  </body>
+</html>
