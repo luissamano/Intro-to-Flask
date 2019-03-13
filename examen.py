@@ -1,23 +1,13 @@
+from data.heroes import Heroe
 from flask import Flask, request
 import json
 
 app = Flask(__name__)
 
-
-""" JSON CORRECTO A ENVIAR
-{
-	"usuario": "a",
-	"contra": "b"
-}
+""""
+@app.route('/heroes', methods=['GET'])
+def getheroes():
 """
-
-""" JSON INCORRECTO A ENVIAR
-{
-	"usuario": "",
-	"contra": "b"
-}
-"""
-
 
 @app.route('/modificar', methods=['PUT'])
 def modificar():
