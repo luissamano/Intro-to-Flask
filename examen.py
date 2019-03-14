@@ -1,23 +1,18 @@
-from data.heroes import Heroe
 from flask import Flask, request
+from flask import request
 import json
 
 app = Flask(__name__)
 
-""""
-@app.route('/heroes', methods=['GET'])
-def getheroes():
-"""
 
 @app.route('/modificar', methods=['PUT'])
 def modificar():
     params = request.get_json()
-
-    if params['usuario'] == "" or params['contra'] == "": #Si alguno de los cqampos esta vacio envia el error
+    if params['usuario'] == "" or params['contra'] == "":
         response = {
             'mensaje': 'No se modifico'
         }
-    else:                                                 #Si los dos campos tienen minimo un caractert manda el mesaje de aceptacion
+    else:
         response = {
             'mensaje': 'Se modifico'
         }
@@ -28,11 +23,12 @@ def modificar():
 def actualizar():
     params = request.get_json()
 
-    if params['usuario'] == "" or params['contra'] == "": #Si alguno de los cqampos esta vacio envia el error
+    # Si alguno de los cqampos esta vacio envia el error
+    if params['usuario'] == "" or params['contra'] == "":
         response = {
             'mensaje': 'No se actualizo'
         }
-    else:                                                 #Si los dos campos tienen minimo un caractert manda el mesaje de aceptacion
+    else:  # Si los dos campos tienen minimo un caractert manda el mesaje de aceptacion
         response = {
             'mensaje': 'Se actualizo'
         }
@@ -43,11 +39,12 @@ def actualizar():
 def eliminar():
     params = request.get_json()
 
-    if params['usuario'] == "" or params['contra'] == "": #Si alguno de los cqampos esta vacio envia el error
+    # Si alguno de los cqampos esta vacio envia el error
+    if params['usuario'] == "" or params['contra'] == "":
         response = {
             'mensaje': 'No se elimino'
         }
-    else:                                                 #Si los dos campos tienen minimo un caractert manda el mesaje de aceptacion
+    else:  # Si los dos campos tienen minimo un caractert manda el mesaje de aceptacion
         response = {
             'mensaje': 'Se elimino'
         }
